@@ -12,14 +12,14 @@ var Specials = []byte{'~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{'
 
 const shuffleCount = 50
 
-type config struct {
+type Config struct {
 	UpperAlphas int
 	LowerAlphas int
 	Digits      int
 	Specials    int
 }
 
-var Config = config{UpperAlphas: 4, LowerAlphas: 4, Digits: 4, Specials: 4}
+var PwdConfig = Config{UpperAlphas: 4, LowerAlphas: 4, Digits: 4, Specials: 4}
 
 func getRandChars(chars []byte, length int) []byte {
 	var rand1 = rand.New(rand.NewSource(time.Now().UnixNano()))
@@ -47,10 +47,10 @@ func shuffleString(s string) string {
 }
 
 func Password() string {
-	lowerAlphaChars := getRandChars(AlphasLower, Config.LowerAlphas)
-	upperAlphaChars := getRandChars(AlphasUpper, Config.UpperAlphas)
-	digitChars := getRandChars(Digits, Config.Digits)
-	specialChars := getRandChars(Specials, Config.Specials)
+	lowerAlphaChars := getRandChars(AlphasLower, PwdConfig.LowerAlphas)
+	upperAlphaChars := getRandChars(AlphasUpper, PwdConfig.UpperAlphas)
+	digitChars := getRandChars(Digits, PwdConfig.Digits)
+	specialChars := getRandChars(Specials, PwdConfig.Specials)
 
 	allChars := string(lowerAlphaChars[:]) + string(upperAlphaChars[:]) + string(digitChars[:]) + string(specialChars[:])
 

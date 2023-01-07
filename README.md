@@ -27,3 +27,5 @@ Basic usage:
     func main() {
         fmt.Println(pwdgen.Password())
     }
+
+I published the module as described [here](https://go.dev/doc/modules/publishing).
