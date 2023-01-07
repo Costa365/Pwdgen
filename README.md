@@ -21,7 +21,7 @@ Basic usage:
 
     import (
         "fmt"
-        "pwdgen/pwdgen"
+        "github.com/costa365/pwdgen"
     )
 
     func main() {
